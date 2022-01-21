@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link href="http://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
+    <meta charset="utf-8">
+    <title></title>
+<style>
+  body {
+    width: 1024px;
+    height: 1000px;
+    background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1e32d1c2-e8f4-41be-af8c-b35aff1fb04f/dcgd5q4-1a52d49f-4736-4e05-9073-d66d4b71f247.png/v1/fill/w_750,h_1000,q_80,strp/blank_pokedex_phone_background_by_thealmightyl_dcgd5q4-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTgyMSIsInBhdGgiOiJcL2ZcLzFlMzJkMWMyLWU4ZjQtNDFiZS1hZjhjLWIzNWFmZjFmYjA0ZlwvZGNnZDVxNC0xYTUyZDQ5Zi00NzM2LTRlMDUtOTA3My1kNjZkNGI3MWYyNDcucG5nIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.Bp44p5oW6-d0ctiXA4tASTcK5zgDR_pGOW2YnJgKP_A');
+    background-repeat: no-repeat;
+  }
+  .button{
+    background-color: white;
+    border:1px solid black;
+    font-size: 20px;
+
+  }
+h1{
+  font-family: 'Pokemon Solid', sans-serif;
+  color: yellow;
+  text-align: center;
+  margin-top: 0;
+  margin-right: 305px;
+  font-size: 50px;
+}
+  .img {
+    width: 200 px;
+    height: 150px;
+  }
+  .pokedex {
+    margin-top: 85px;
+    margin-right: auto;
+    margin-left:auto;
+
+    display: flex;
+    height: 400px;
+    width: 600px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow: auto;
+    }
+ #pokemon {
+   display: flex;
+   flex-wrap: wrap;
+   overflow: auto;
+   margin:
+}
+
+li {
+  list-style-type: none;
+  font-size: 20px;
+}
+</style>
+
+  </head>
+  <body>
+    <h1 id="Title">POKEDEX </h1>
+    <div class="pokedex">
+
+    <ul id"pokemon">
+      <% for (let i = 0; i < allpokemon.length; i++){ %>
+      <li>
+<a href="/pokedex/<%=i%>"><%=allpokemon[i].name%></a>
+<img class="img" src="<%=allpokemon[i].img; %>" alt="<Pokemon Image">
+  <form action="/pokedex/<%=i%>?_method=DELETE" method="POST">
+  <br/>  <input type="submit" value="DELETE">
+  </form>
+<a class="button" href="/pokedex/<%=i%>/edit">EDIT</a>
+      </li>
+      <%}%>
+    </ul> <br/>
+</div>
+
+    <a href="/pokedex/new">Make a new pokemon</a>
+
+  </body>
+</html>
