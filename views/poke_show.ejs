@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      body{
+        background-image: url("https://wallpapercave.com/wp/wp8813106.jpg");
+        background-repeat: no-repeat;
+        background-size: 810px 900px;
+      }
+      .container{
+        width: 600px;
+        margin-top: 340px;
+        margin-left: 60px;
+        display:flex;
+        flex-direction: row;
+      }
+      .image {
+        display:flex;
+        position: relative;
+        width: 500px;
+        height: 355px
+        padding: 10px;
+
+      }
+
+      .traits{
+        width: 300px;
+padding: 10px;
+      }
+img {
+  height: 355px;
+  width: 400px;
+}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+    <h1><%=pokedex.name%></h1> <br/>
+
+
+<div class="traits">
+
+
+    <h3>HP</h3>
+
+    <h3><%=pokedex.stats.hp%></h3>
+
+    <h3>ATTACK</h3>
+
+    <h3><%=pokedex.stats.attack%></h3>
+
+    <h3>DEFENSE</h3>
+
+    <h3><%=pokedex.stats.defense%></h3>
+</div>
+<div class="image">
+  <img src="<%=pokedex.img%>" alt="Pokemon image">
+</div>
+
+<br/>
+<a href="/pokedex">Main Menu</a>
+</div>
+  </body>
+</html>

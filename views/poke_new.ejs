@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="http://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
+    <style>
+      body {
+        text-align: center;
+      background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/9938babd-3a6f-476d-81a9-fdfadc2bf5ff/d6zj43i-988ad0d0-32f4-4484-91e2-a6fafb38658d.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzk5MzhiYWJkLTNhNmYtNDc2ZC04MWE5LWZkZmFkYzJiZjVmZlwvZDZ6ajQzaS05ODhhZDBkMC0zMmY0LTQ0ODQtOTFlMi1hNmZhZmIzODY1OGQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.0TgtULG5Z79lftb-lHbkdvntzSbw0pr5vQjr89wBZxM')
+
+}
+h1{
+  font-family: 'Pokemon Solid', sans-serif;
+  color: yellow;
+  text-align: center;
+  font-size: 50px;
+}
+      .poke {
+        height: 400px;
+        width: 500px;
+
+      }
+    </style>
+    <title></title>
+  </head>
+  <body>
+    <h1>New Pokemon</h1>
+    <form action="/pokedex" method="POST">
+      Name: <input type="text" name="name" /><br/>
+      HP: <input type="text" name="hp" /><br/>
+      ATTACK: <input type="text" name="attack" /><br/>
+      DEFENSE: <input type="text" name="defense" /><br/>
+
+      <!-- IMG: <input value="https://i0.wp.com/www.alphr.com/wp-content/uploads/2016/07/whos_that_pokemon.png?fit=1920%2C1080&ssl=1"alt="Who is that pokemon"> -->
+      <input type="submit" value="submit">
+    </form>
+     <!-- ("submit").on("click", (e) => { let (id = 160 ++) })  -->
+
+<!-- console.log(id) -->
+    <img class="poke" src="https://i0.wp.com/www.alphr.com/wp-content/uploads/2016/07/whos_that_pokemon.png?fit=1920%2C1080&ssl=1" alt="Who is that Pokemon photo">
+<br/>
+<a href="/pokedex">Pokedex</a>
+  </body>
+</html>
