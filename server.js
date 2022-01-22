@@ -2,6 +2,7 @@ const express = require('express')
 const methodOverride = require('method-override')
 const app = express()
 const pokemon = require('./models/pokemon.js')
+const PORT = process.env.PORT || 3000;
 
 app.use(express.urlencoded({
   extended: false
@@ -86,6 +87,6 @@ app.get('/pokedex/:indexOfPokemonArray/', (req, res) => {
 
 
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log('Gotta catch em all');
 })
