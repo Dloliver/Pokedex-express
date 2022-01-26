@@ -10,6 +10,10 @@ app.use(express.urlencoded({
 app.use(express.static('public'))
 app.use(methodOverride('_method'))
 
+app.get('/', (req, res) => {
+  res.send('welcome to pokedex')
+})
+
 app.get('/pokedex/:indexOfPokemonArray/edit', (req, res) => {
   res.render('poke_edit.ejs', {
 
