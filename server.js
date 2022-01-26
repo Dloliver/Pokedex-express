@@ -11,7 +11,10 @@ app.use(express.static('public'))
 app.use(methodOverride('_method'))
 
 app.get('/', (req, res) => {
-  res.send('welcome to pokedex')
+  res.render(
+    'poke_index.ejs', {
+      allpokemon: pokemon
+    })
 })
 
 app.get('/pokedex/:indexOfPokemonArray/edit', (req, res) => {
