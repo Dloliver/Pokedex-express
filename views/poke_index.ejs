@@ -59,14 +59,22 @@ li {
     <h1 id="Title">POKEDEX </h1>
     <div class="pokedex">
 
+//This line of code allows all the pokemon to be put into a ul and listed out
+
     <ul id"pokemon">
       <% for (let i = 0; i < allpokemon.length; i++){ %>
       <li>
 <a href="/pokedex/<%=i%>"><%=allpokemon[i].name%></a>
+
+//Adds a image of each pokemon
 <img class="img" src="<%=allpokemon[i].img; %>" alt="<Pokemon Image">
+
+//Button deletes out a pokemon that has been added
   <form action="/pokedex/<%=i%>?_method=DELETE" method="POST">
   <br/>  <input type="submit" value="DELETE">
   </form>
+
+//Button takes you to the edit page of the specific pokemon
 <a class="button" href="/pokedex/<%=i%>/edit">EDIT</a>
       </li>
       <%}%>

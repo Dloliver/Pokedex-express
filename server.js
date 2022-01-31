@@ -10,6 +10,7 @@ app.use(express.urlencoded({
 app.use(express.static('public'))
 app.use(methodOverride('_method'))
 
+//Home Page - Shows all Pokemon
 app.get('/', (req, res) => {
   res.render(
     'poke_index.ejs', {
@@ -17,6 +18,7 @@ app.get('/', (req, res) => {
     })
 })
 
+//Edit Page - Allows you to edit the pokemon
 app.get('/pokedex/:indexOfPokemonArray/edit', (req, res) => {
   res.render('poke_edit.ejs', {
 
@@ -25,6 +27,7 @@ app.get('/pokedex/:indexOfPokemonArray/edit', (req, res) => {
   })
 })
 
+//Show Page - Shows the pokemon selected and their specific stats
 app.put('/pokedex/:indexOfPokemonArray', (req, res) => {
   pokemon[req.params.indexOfPokemonArray] = req.body;
 
@@ -46,18 +49,14 @@ app.put('/pokedex/:indexOfPokemonArray', (req, res) => {
 
 
 
-//delete
+//Delete Route - Allows you to delete a selected pokemon
 app.delete('/pokedex/:indexOfPokemonArray', (req, res) => {
   pokemon.splice(req.params.indexOfPokemonArray, 1)
   res.redirect('/pokedex')
 })
 
-// app.post('/pokedex', (req, res) => {
-//   console.log('req.body is', req.body);
-//   ''
-// })
 
-//Add new
+//Add New - Allows you to fill out a form that creates a new pokemon
 app.post('/pokedex', (req, res) => {
   pokemon.push(req.body);
   res.redirect('/pokedex');
@@ -71,12 +70,12 @@ app.post('/pokedex', (req, res) => {
   req.body.stats.defense = req.body.defense
 })
 
-
+//Takes you to the page to create a new pokemon
 app.get('/pokedex/new', (req, res) => {
   res.render('poke_new.ejs')
 })
 
-//Index route
+//Index - Shows all pokemon on the index page
 app.get('/pokedex', (req, res) => {
   res.render(
     'poke_index.ejs', {
@@ -85,7 +84,7 @@ app.get('/pokedex', (req, res) => {
   )
 })
 
-//Show route
+//Allows you to look at a specific pokemon
 app.get('/pokedex/:indexOfPokemonArray/', (req, res) => {
   res.render('poke_show.ejs', {
     pokedex: pokemon[req.params.indexOfPokemonArray]
